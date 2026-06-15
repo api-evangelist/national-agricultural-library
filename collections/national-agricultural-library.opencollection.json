@@ -1,0 +1,259 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Food Data Central API",
+    "version": "1.0.1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "FDC",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Fetches details for one food item by FDC ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nal.usda.gov/fdc/v1/food/:fdcId",
+            "params": [
+              {
+                "name": "fdcId",
+                "value": "",
+                "type": "path",
+                "description": "FDC id of the food to retrieve"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query",
+                "description": "Optional. 'abridged' for an abridged set of elements, 'full' for all elements (default)."
+              },
+              {
+                "name": "nutrients",
+                "value": "",
+                "type": "query",
+                "description": "Optional. List of up to 25 nutrient numbers. Only the nutrient information for the specified nutrients will be returned. Should be comma separated list (e.g. nutrients=203,204) or repeating parameters (e.g. nutrients=203&nutrients=204). If a food does not have any matching nutrients, the food will be returned with an empty foodNutrients element."
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "api_key",
+              "value": "{{api_key}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Retrieves a single food item by an FDC ID. Optional format and nutrients can be specified."
+        },
+        {
+          "info": {
+            "name": "Fetches details for multiple food items using input FDC IDs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nal.usda.gov/fdc/v1/foods",
+            "params": [
+              {
+                "name": "fdcIds",
+                "value": "",
+                "type": "query",
+                "description": "List of multiple FDC ID's. Should be comma separated list (e.g. fdcIds=534358,373052) or repeating parameters (e.g. fdcIds=534358&fdcIds=373052)."
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query",
+                "description": "Optional. 'abridged' for an abridged set of elements, 'full' for all elements (default)."
+              },
+              {
+                "name": "nutrients",
+                "value": "",
+                "type": "query",
+                "description": "Optional. List of up to 25 nutrient numbers. Only the nutrient information for the specified nutrients will be returned. Should be comma separated list (e.g. nutrients=203,204) or repeating parameters (e.g. nutrients=203&nutrients=204). If a food does not have any matching nutrients, the food will be returned with an empty foodNutrients element."
+              }
+            ]
+          },
+          "docs": "Retrieves a list of food items by a list of up to 20 FDC IDs. Optional format and nutrients can be specified. Invalid FDC ID's or ones that are not found are omitted and an empty set is returned if there are no matches."
+        },
+        {
+          "info": {
+            "name": "Fetches details for multiple food items using input FDC IDs",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.nal.usda.gov/fdc/v1/foods",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Retrieves a list of food items by a list of up to 20 FDC IDs. Optional format and nutrients can be specified. Invalid FDC ID's or ones that are not found are omitted and an empty set is returned if there are no matches."
+        },
+        {
+          "info": {
+            "name": "Returns a paged list of foods, in the 'abridged' format",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nal.usda.gov/fdc/v1/foods/list",
+            "params": [
+              {
+                "name": "dataType",
+                "value": "Foundation,SR Legacy",
+                "type": "query",
+                "description": "Optional. Filter on a specific data type; specify one or more values in an array."
+              },
+              {
+                "name": "pageSize",
+                "value": "25",
+                "type": "query",
+                "description": "Optional. Maximum number of results to return for the current page. Default is 50."
+              },
+              {
+                "name": "pageNumber",
+                "value": "",
+                "type": "query",
+                "description": "Optional. Page number to retrieve. The offset into the overall result set is expressed as (pageNumber * pageSize)"
+              },
+              {
+                "name": "sortBy",
+                "value": "",
+                "type": "query",
+                "description": "Optional. Specify one of the possible values to sort by that field. Note, dataType.keyword will be dataType and lowercaseDescription.keyword will be description in future releases."
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query",
+                "description": "Optional. The sort direction for the results. Only applicable if sortBy is specified."
+              }
+            ]
+          },
+          "docs": "Retrieves a paged list of foods. Use the pageNumber parameter to page through the entire result set."
+        },
+        {
+          "info": {
+            "name": "Returns a paged list of foods, in the 'abridged' format",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.nal.usda.gov/fdc/v1/foods/list",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Retrieves a paged list of foods. Use the pageNumber parameter to page through the entire result set."
+        },
+        {
+          "info": {
+            "name": "Returns a list of foods that matched search (query) keywords",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nal.usda.gov/fdc/v1/foods/search",
+            "params": [
+              {
+                "name": "query",
+                "value": "cheddar cheese",
+                "type": "query",
+                "description": "One or more search terms.  The string may include [search operators](https://fdc.nal.usda.gov/help.html#bkmk-2)"
+              },
+              {
+                "name": "dataType",
+                "value": "Foundation,SR Legacy",
+                "type": "query",
+                "description": "Optional. Filter on a specific data type; specify one or more values in an array."
+              },
+              {
+                "name": "pageSize",
+                "value": "25",
+                "type": "query",
+                "description": "Optional. Maximum number of results to return for the current page. Default is 50."
+              },
+              {
+                "name": "pageNumber",
+                "value": "",
+                "type": "query",
+                "description": "Optional. Page number to retrieve. The offset into the overall result set is expressed as (pageNumber * pageSize)"
+              },
+              {
+                "name": "sortBy",
+                "value": "dataType.keyword",
+                "type": "query",
+                "description": "Optional. Specify one of the possible values to sort by that field. Note, dataType.keyword will be dataType and lowercaseDescription.keyword will be description in future releases."
+              },
+              {
+                "name": "sortOrder",
+                "value": "asc",
+                "type": "query",
+                "description": "Optional. The sort direction for the results. Only applicable if sortBy is specified."
+              },
+              {
+                "name": "brandOwner",
+                "value": "Kar Nut Products Company",
+                "type": "query",
+                "description": "Optional. Filter results based on the brand owner of the food. Only applies to Branded Foods"
+              }
+            ]
+          },
+          "docs": "Search for foods using keywords. Results can be filtered by dataType and there are options for result page sizes or sorting."
+        },
+        {
+          "info": {
+            "name": "Returns a list of foods that matched search (query) keywords",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.nal.usda.gov/fdc/v1/foods/search",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Search for foods using keywords. Results can be filtered by dataType and there are options for result page sizes or sorting."
+        },
+        {
+          "info": {
+            "name": "Returns this documentation in JSON format",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nal.usda.gov/fdc/v1/json-spec"
+          },
+          "docs": "The OpenAPI 3.0 specification for the FDC API rendered as JSON (JavaScript Object Notation)"
+        },
+        {
+          "info": {
+            "name": "Returns this documentation in JSON format",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nal.usda.gov/fdc/v1/yaml-spec"
+          },
+          "docs": "The OpenAPI 3.0 specification for the FDC API rendered as YAML (YAML Ain't Markup Language)"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
