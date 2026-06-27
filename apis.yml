@@ -35,7 +35,7 @@ apis:
       - type: OpenAPI
         url: >-
           https://raw.githubusercontent.com/api-evangelist/national-agricultural-library/main/openapi/national-agricultural-library-openapi.json
-      - type: SignUp
+      - type: Signup
         url: https://fdc.nal.usda.gov/api-key-signup
 common:
   - type: LinkedIn
