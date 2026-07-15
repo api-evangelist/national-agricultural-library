@@ -38,6 +38,8 @@ apis:
       - type: Signup
         url: https://fdc.nal.usda.gov/api-key-signup
 common:
+  - type: AgenticAccess
+    url: agentic-access/national-agricultural-library-agentic-access.yml
   - type: DomainSecurity
     url: security/national-agricultural-library-domain-security.yml
   - type: Authentication
