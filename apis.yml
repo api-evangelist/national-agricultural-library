@@ -4,7 +4,20 @@ description: >-
   The USDA National Agricultural Library houses one of the world's largest collections devoted to agriculture and its
   related sciences, and operates FoodData Central, an integrated data system providing nutrient profiles for foods.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/national-agricultural-library.png
 url: https://www.nal.usda.gov/
 created: '2024-11-21'
 modified: '2026-05-19'
@@ -16,27 +29,20 @@ tags:
   - Food
   - Nutrition
 apis:
-  - aid: national-agricultural-library:fooddata-central
-    name: USDA FoodData Central API
-    description: >-
-      The FoodData Central API provides REST access to FoodData Central (FDC). It is intended primarily to assist
-      application developers wishing to incorporate nutrient data into their applications or websites.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://fdc.nal.usda.gov/api-guide
-    baseURL: https://api.nal.usda.gov/fdc/v1
-    tags:
-      - Food
-      - Nutrition
-      - Agriculture
-      - Open Data
-    properties:
-      - type: Documentation
-        url: https://fdc.nal.usda.gov/api-guide
-      - type: OpenAPI
-        url: >-
-          https://raw.githubusercontent.com/api-evangelist/national-agricultural-library/main/openapi/national-agricultural-library-openapi.json
-      - type: Signup
-        url: https://fdc.nal.usda.gov/api-key-signup
+- aid: national-agricultural-library:national-agricultural-library-fdc-api
+  name: National Agricultural Library FDC API
+  description: endpoints to retrieve nutrient data
+  humanURL: https://fdc.nal.usda.gov/api-guide
+  baseURL: https://api.nal.usda.gov/fdc/v1
+  tags:
+  - FDC
+  properties:
+  - type: OpenAPI
+    url: openapi/national-agricultural-library-fdc-api-openapi.yml
+  - type: Documentation
+    url: https://fdc.nal.usda.gov/api-guide
+  - type: Signup
+    url: https://fdc.nal.usda.gov/api-key-signup
 common:
   - type: AgenticAccess
     url: agentic-access/national-agricultural-library-agentic-access.yml
