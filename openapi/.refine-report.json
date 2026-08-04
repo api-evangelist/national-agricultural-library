@@ -1,0 +1,14 @@
+{
+  "provider": "national-agricultural-library",
+  "sources": [
+    "national-agricultural-library-fdc-api-openapi.yml"
+  ],
+  "outputs": [
+    "national-agricultural-library-fdc-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
