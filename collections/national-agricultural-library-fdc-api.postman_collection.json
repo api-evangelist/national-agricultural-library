@@ -1,0 +1,1439 @@
+{
+  "item": [
+    {
+      "id": "13028eb8-1bb3-4acf-919c-357a2812db88",
+      "name": "FDC",
+      "description": {
+        "content": "endpoints to retrieve nutrient data",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a101a1ad-6f16-4811-87ee-a3489addb4b5",
+          "name": "Fetches details for one food item by FDC ID",
+          "request": {
+            "name": "Fetches details for one food item by FDC ID",
+            "description": {
+              "content": "Retrieves a single food item by an FDC ID. Optional format and nutrients can be specified.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "food",
+                ":fdcId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "<string>",
+                  "description": "Optional. 'abridged' for an abridged set of elements, 'full' for all elements (default)."
+                },
+                {
+                  "disabled": false,
+                  "key": "nutrients",
+                  "value": "<integer>",
+                  "description": "Optional. List of up to 25 nutrient numbers. Only the nutrient information for the specified nutrients will be returned. Should be comma separated list (e.g. nutrients=203,204) or repeating parameters (e.g. nutrients=203&nutrients=204). If a food does not have any matching nutrients, the food will be returned with an empty foodNutrients element."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "fdcId",
+                  "description": "(Required) FDC id of the food to retrieve"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "api_key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "84207d4c-a1af-447d-9485-04bac9b00319",
+              "name": "One food result.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "food",
+                    ":fdcId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "nutrients",
+                      "value": "203"
+                    },
+                    {
+                      "key": "nutrients",
+                      "value": "204"
+                    },
+                    {
+                      "key": "nutrients",
+                      "value": "205"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fdcId",
+                      "description": "(Required) FDC id of the food to retrieve"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"fdcId\": 534358,\n  \"dataType\": \"Branded\",\n  \"description\": \"NUT 'N BERRY MIX\",\n  \"foodNutrients\": [\n    {\n      \"number\": 303,\n      \"name\": \"Iron, Fe\",\n      \"amount\": 0.53,\n      \"unitName\": \"mg\",\n      \"derivationCode\": \"LCCD\",\n      \"derivationDescription\": \"Calculated from a daily value percentage per serving size measure\"\n    },\n    {\n      \"number\": 303,\n      \"name\": \"Iron, Fe\",\n      \"amount\": 0.53,\n      \"unitName\": \"mg\",\n      \"derivationCode\": \"LCCD\",\n      \"derivationDescription\": \"Calculated from a daily value percentage per serving size measure\"\n    }\n  ],\n  \"publicationDate\": \"4/1/2019\",\n  \"brandOwner\": \"Kar Nut Products Company\",\n  \"gtinUpc\": \"string\",\n  \"ndbNumber\": 7954,\n  \"foodCode\": \"27415110\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "237d0045-0b4d-4a11-ab66-0a75bcaaeac1",
+              "name": "bad input parameter",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "food",
+                    ":fdcId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "nutrients",
+                      "value": "203"
+                    },
+                    {
+                      "key": "nutrients",
+                      "value": "204"
+                    },
+                    {
+                      "key": "nutrients",
+                      "value": "205"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fdcId",
+                      "description": "(Required) FDC id of the food to retrieve"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "35c6258e-89f0-4062-98db-08a528f6f43f",
+              "name": "no results found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "food",
+                    ":fdcId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "nutrients",
+                      "value": "203"
+                    },
+                    {
+                      "key": "nutrients",
+                      "value": "204"
+                    },
+                    {
+                      "key": "nutrients",
+                      "value": "205"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fdcId",
+                      "description": "(Required) FDC id of the food to retrieve"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8c440dd4-d798-425c-a34b-ee18ac2a904e",
+          "name": "Fetches details for multiple food items using input FDC IDs",
+          "request": {
+            "name": "Fetches details for multiple food items using input FDC IDs",
+            "description": {
+              "content": "Retrieves a list of food items by a list of up to 20 FDC IDs. Optional format and nutrients can be specified. Invalid FDC ID's or ones that are not found are omitted and an empty set is returned if there are no matches.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "foods"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fdcIds",
+                  "value": "<string>",
+                  "description": "(Required) List of multiple FDC ID's. Should be comma separated list (e.g. fdcIds=534358,373052) or repeating parameters (e.g. fdcIds=534358&fdcIds=373052)."
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "<string>",
+                  "description": "Optional. 'abridged' for an abridged set of elements, 'full' for all elements (default)."
+                },
+                {
+                  "disabled": false,
+                  "key": "nutrients",
+                  "value": "<integer>",
+                  "description": "Optional. List of up to 25 nutrient numbers. Only the nutrient information for the specified nutrients will be returned. Should be comma separated list (e.g. nutrients=203,204) or repeating parameters (e.g. nutrients=203&nutrients=204). If a food does not have any matching nutrients, the food will be returned with an empty foodNutrients element."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1faf61bb-3f30-4b67-96e2-8e08304c575b",
+              "name": "List of Food details matching specified FDC ID's. Invalid FDC ID's or ones that are not found are omitted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "foods"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fdcIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "format",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "nutrients",
+                      "value": "203"
+                    },
+                    {
+                      "key": "nutrients",
+                      "value": "204"
+                    },
+                    {
+                      "key": "nutrients",
+                      "value": "205"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"fdcId\": 534358,\n    \"dataType\": \"Branded\",\n    \"description\": \"NUT 'N BERRY MIX\",\n    \"foodNutrients\": [\n      {\n        \"number\": 303,\n        \"name\": \"Iron, Fe\",\n        \"amount\": 0.53,\n        \"unitName\": \"mg\",\n        \"derivationCode\": \"LCCD\",\n        \"derivationDescription\": \"Calculated from a daily value percentage per serving size measure\"\n      },\n      {\n        \"number\": 303,\n        \"name\": \"Iron, Fe\",\n        \"amount\": 0.53,\n        \"unitName\": \"mg\",\n        \"derivationCode\": \"LCCD\",\n        \"derivationDescription\": \"Calculated from a daily value percentage per serving size measure\"\n      }\n    ],\n    \"publicationDate\": \"4/1/2019\",\n    \"brandOwner\": \"Kar Nut Products Company\",\n    \"gtinUpc\": \"string\",\n    \"ndbNumber\": 7954,\n    \"foodCode\": \"27415110\"\n  },\n  {\n    \"fdcId\": 534358,\n    \"dataType\": \"Branded\",\n    \"description\": \"NUT 'N BERRY MIX\",\n    \"foodNutrients\": [\n      {\n        \"number\": 303,\n        \"name\": \"Iron, Fe\",\n        \"amount\": 0.53,\n        \"unitName\": \"mg\",\n        \"derivationCode\": \"LCCD\",\n        \"derivationDescription\": \"Calculated from a daily value percentage per serving size measure\"\n      },\n      {\n        \"number\": 303,\n        \"name\": \"Iron, Fe\",\n        \"amount\": 0.53,\n        \"unitName\": \"mg\",\n        \"derivationCode\": \"LCCD\",\n        \"derivationDescription\": \"Calculated from a daily value percentage per serving size measure\"\n      }\n    ],\n    \"publicationDate\": \"4/1/2019\",\n    \"brandOwner\": \"Kar Nut Products Company\",\n    \"gtinUpc\": \"string\",\n    \"ndbNumber\": 7954,\n    \"foodCode\": \"27415110\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ea096791-9d51-47c7-be61-b1f331cbd753",
+              "name": "bad input parameter",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "foods"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fdcIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "format",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "nutrients",
+                      "value": "203"
+                    },
+                    {
+                      "key": "nutrients",
+                      "value": "204"
+                    },
+                    {
+                      "key": "nutrients",
+                      "value": "205"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "383cffd3-ec46-4f37-bf7d-6240f0ea5b37",
+          "name": "Fetches details for multiple food items using input FDC IDs",
+          "request": {
+            "name": "Fetches details for multiple food items using input FDC IDs",
+            "description": {
+              "content": "Retrieves a list of food items by a list of up to 20 FDC IDs. Optional format and nutrients can be specified. Invalid FDC ID's or ones that are not found are omitted and an empty set is returned if there are no matches.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "foods"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fdcIds\": [\n    \"<integer>\"\n  ],\n  \"format\": \"<string>\",\n  \"nutrients\": [\n    \"<integer>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4bbaae00-ff0e-45d3-b004-f241d4868b24",
+              "name": "List of Food details matching specified FDC ID's. Invalid FDC ID's or ones that are not found are omitted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "foods"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fdcIds\": [\n    534358,\n    373052,\n    616350\n  ],\n  \"format\": \"<string>\",\n  \"nutrients\": [\n    203,\n    204,\n    205\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"fdcId\": 534358,\n    \"dataType\": \"Branded\",\n    \"description\": \"NUT 'N BERRY MIX\",\n    \"foodNutrients\": [\n      {\n        \"number\": 303,\n        \"name\": \"Iron, Fe\",\n        \"amount\": 0.53,\n        \"unitName\": \"mg\",\n        \"derivationCode\": \"LCCD\",\n        \"derivationDescription\": \"Calculated from a daily value percentage per serving size measure\"\n      },\n      {\n        \"number\": 303,\n        \"name\": \"Iron, Fe\",\n        \"amount\": 0.53,\n        \"unitName\": \"mg\",\n        \"derivationCode\": \"LCCD\",\n        \"derivationDescription\": \"Calculated from a daily value percentage per serving size measure\"\n      }\n    ],\n    \"publicationDate\": \"4/1/2019\",\n    \"brandOwner\": \"Kar Nut Products Company\",\n    \"gtinUpc\": \"string\",\n    \"ndbNumber\": 7954,\n    \"foodCode\": \"27415110\"\n  },\n  {\n    \"fdcId\": 534358,\n    \"dataType\": \"Branded\",\n    \"description\": \"NUT 'N BERRY MIX\",\n    \"foodNutrients\": [\n      {\n        \"number\": 303,\n        \"name\": \"Iron, Fe\",\n        \"amount\": 0.53,\n        \"unitName\": \"mg\",\n        \"derivationCode\": \"LCCD\",\n        \"derivationDescription\": \"Calculated from a daily value percentage per serving size measure\"\n      },\n      {\n        \"number\": 303,\n        \"name\": \"Iron, Fe\",\n        \"amount\": 0.53,\n        \"unitName\": \"mg\",\n        \"derivationCode\": \"LCCD\",\n        \"derivationDescription\": \"Calculated from a daily value percentage per serving size measure\"\n      }\n    ],\n    \"publicationDate\": \"4/1/2019\",\n    \"brandOwner\": \"Kar Nut Products Company\",\n    \"gtinUpc\": \"string\",\n    \"ndbNumber\": 7954,\n    \"foodCode\": \"27415110\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ed43adf1-62e3-4669-9e10-ab6ef6972a8c",
+              "name": "bad input parameter",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "foods"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fdcIds\": [\n    534358,\n    373052,\n    616350\n  ],\n  \"format\": \"<string>\",\n  \"nutrients\": [\n    203,\n    204,\n    205\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ea2322b0-9387-4287-b0e2-b20c46c70d6c",
+          "name": "Returns a paged list of foods, in the 'abridged' format",
+          "request": {
+            "name": "Returns a paged list of foods, in the 'abridged' format",
+            "description": {
+              "content": "Retrieves a paged list of foods. Use the pageNumber parameter to page through the entire result set.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "foods",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "dataType",
+                  "value": "<string>",
+                  "description": "Optional. Filter on a specific data type; specify one or more values in an array."
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>",
+                  "description": "Optional. Maximum number of results to return for the current page. Default is 50."
+                },
+                {
+                  "disabled": false,
+                  "key": "pageNumber",
+                  "value": "<integer>",
+                  "description": "Optional. Page number to retrieve. The offset into the overall result set is expressed as (pageNumber * pageSize)"
+                },
+                {
+                  "disabled": false,
+                  "key": "sortBy",
+                  "value": "<string>",
+                  "description": "Optional. Specify one of the possible values to sort by that field. Note, dataType.keyword will be dataType and lowercaseDescription.keyword will be description in future releases."
+                },
+                {
+                  "disabled": false,
+                  "key": "sortOrder",
+                  "value": "<string>",
+                  "description": "Optional. The sort direction for the results. Only applicable if sortBy is specified."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1acddbc4-fd9d-49ad-ad61-27b67fca1b46",
+              "name": "List of foods for the requested page",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "foods",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "dataType",
+                      "value": "Foundation,SR Legacy"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "25"
+                    },
+                    {
+                      "key": "pageNumber",
+                      "value": "2"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortOrder",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"fdcId\": 534358,\n    \"dataType\": \"Branded\",\n    \"description\": \"NUT 'N BERRY MIX\",\n    \"foodNutrients\": [\n      {\n        \"number\": 303,\n        \"name\": \"Iron, Fe\",\n        \"amount\": 0.53,\n        \"unitName\": \"mg\",\n        \"derivationCode\": \"LCCD\",\n        \"derivationDescription\": \"Calculated from a daily value percentage per serving size measure\"\n      },\n      {\n        \"number\": 303,\n        \"name\": \"Iron, Fe\",\n        \"amount\": 0.53,\n        \"unitName\": \"mg\",\n        \"derivationCode\": \"LCCD\",\n        \"derivationDescription\": \"Calculated from a daily value percentage per serving size measure\"\n      }\n    ],\n    \"publicationDate\": \"4/1/2019\",\n    \"brandOwner\": \"Kar Nut Products Company\",\n    \"gtinUpc\": \"string\",\n    \"ndbNumber\": 7954,\n    \"foodCode\": \"27415110\"\n  },\n  {\n    \"fdcId\": 534358,\n    \"dataType\": \"Branded\",\n    \"description\": \"NUT 'N BERRY MIX\",\n    \"foodNutrients\": [\n      {\n        \"number\": 303,\n        \"name\": \"Iron, Fe\",\n        \"amount\": 0.53,\n        \"unitName\": \"mg\",\n        \"derivationCode\": \"LCCD\",\n        \"derivationDescription\": \"Calculated from a daily value percentage per serving size measure\"\n      },\n      {\n        \"number\": 303,\n        \"name\": \"Iron, Fe\",\n        \"amount\": 0.53,\n        \"unitName\": \"mg\",\n        \"derivationCode\": \"LCCD\",\n        \"derivationDescription\": \"Calculated from a daily value percentage per serving size measure\"\n      }\n    ],\n    \"publicationDate\": \"4/1/2019\",\n    \"brandOwner\": \"Kar Nut Products Company\",\n    \"gtinUpc\": \"string\",\n    \"ndbNumber\": 7954,\n    \"foodCode\": \"27415110\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5924e6cb-fcef-4f89-a8a5-08b7ee72e414",
+              "name": "bad input parameter",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "foods",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "dataType",
+                      "value": "Foundation,SR Legacy"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "25"
+                    },
+                    {
+                      "key": "pageNumber",
+                      "value": "2"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortOrder",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c8914900-6ac6-4e66-a1e5-66e8d6b464b8",
+          "name": "Returns a paged list of foods, in the 'abridged' format",
+          "request": {
+            "name": "Returns a paged list of foods, in the 'abridged' format",
+            "description": {
+              "content": "Retrieves a paged list of foods. Use the pageNumber parameter to page through the entire result set.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "foods",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dataType\": [\n    \"<string>\"\n  ],\n  \"pageSize\": \"<integer>\",\n  \"pageNumber\": \"<integer>\",\n  \"sortBy\": \"<string>\",\n  \"sortOrder\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f6604b29-4a0e-462f-9bd0-1bcc788833e0",
+              "name": "List of foods for the requested page",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "foods",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dataType\": [\n    \"Foundation\",\n    \"SR Legacy\"\n  ],\n  \"pageSize\": 25,\n  \"pageNumber\": 2,\n  \"sortBy\": \"<string>\",\n  \"sortOrder\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"fdcId\": 534358,\n    \"dataType\": \"Branded\",\n    \"description\": \"NUT 'N BERRY MIX\",\n    \"foodNutrients\": [\n      {\n        \"number\": 303,\n        \"name\": \"Iron, Fe\",\n        \"amount\": 0.53,\n        \"unitName\": \"mg\",\n        \"derivationCode\": \"LCCD\",\n        \"derivationDescription\": \"Calculated from a daily value percentage per serving size measure\"\n      },\n      {\n        \"number\": 303,\n        \"name\": \"Iron, Fe\",\n        \"amount\": 0.53,\n        \"unitName\": \"mg\",\n        \"derivationCode\": \"LCCD\",\n        \"derivationDescription\": \"Calculated from a daily value percentage per serving size measure\"\n      }\n    ],\n    \"publicationDate\": \"4/1/2019\",\n    \"brandOwner\": \"Kar Nut Products Company\",\n    \"gtinUpc\": \"string\",\n    \"ndbNumber\": 7954,\n    \"foodCode\": \"27415110\"\n  },\n  {\n    \"fdcId\": 534358,\n    \"dataType\": \"Branded\",\n    \"description\": \"NUT 'N BERRY MIX\",\n    \"foodNutrients\": [\n      {\n        \"number\": 303,\n        \"name\": \"Iron, Fe\",\n        \"amount\": 0.53,\n        \"unitName\": \"mg\",\n        \"derivationCode\": \"LCCD\",\n        \"derivationDescription\": \"Calculated from a daily value percentage per serving size measure\"\n      },\n      {\n        \"number\": 303,\n        \"name\": \"Iron, Fe\",\n        \"amount\": 0.53,\n        \"unitName\": \"mg\",\n        \"derivationCode\": \"LCCD\",\n        \"derivationDescription\": \"Calculated from a daily value percentage per serving size measure\"\n      }\n    ],\n    \"publicationDate\": \"4/1/2019\",\n    \"brandOwner\": \"Kar Nut Products Company\",\n    \"gtinUpc\": \"string\",\n    \"ndbNumber\": 7954,\n    \"foodCode\": \"27415110\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "53662f52-e7e0-4170-ba6d-5b0ce8507e65",
+              "name": "bad input parameter",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "foods",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dataType\": [\n    \"Foundation\",\n    \"SR Legacy\"\n  ],\n  \"pageSize\": 25,\n  \"pageNumber\": 2,\n  \"sortBy\": \"<string>\",\n  \"sortOrder\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5d6b9e61-36a6-48f7-a26d-665b788747ba",
+          "name": "Returns a list of foods that matched search (query) keywords",
+          "request": {
+            "name": "Returns a list of foods that matched search (query) keywords",
+            "description": {
+              "content": "Search for foods using keywords. Results can be filtered by dataType and there are options for result page sizes or sorting.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "foods",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "query",
+                  "value": "<string>",
+                  "description": "(Required) One or more search terms.  The string may include [search operators](https://fdc.nal.usda.gov/help.html#bkmk-2)"
+                },
+                {
+                  "disabled": false,
+                  "key": "dataType",
+                  "value": "<string>",
+                  "description": "Optional. Filter on a specific data type; specify one or more values in an array."
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>",
+                  "description": "Optional. Maximum number of results to return for the current page. Default is 50."
+                },
+                {
+                  "disabled": false,
+                  "key": "pageNumber",
+                  "value": "<integer>",
+                  "description": "Optional. Page number to retrieve. The offset into the overall result set is expressed as (pageNumber * pageSize)"
+                },
+                {
+                  "disabled": false,
+                  "key": "sortBy",
+                  "value": "<string>",
+                  "description": "Optional. Specify one of the possible values to sort by that field. Note, dataType.keyword will be dataType and lowercaseDescription.keyword will be description in future releases."
+                },
+                {
+                  "disabled": false,
+                  "key": "sortOrder",
+                  "value": "<string>",
+                  "description": "Optional. The sort direction for the results. Only applicable if sortBy is specified."
+                },
+                {
+                  "disabled": false,
+                  "key": "brandOwner",
+                  "value": "<string>",
+                  "description": "Optional. Filter results based on the brand owner of the food. Only applies to Branded Foods"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "94499586-6cdf-4bc6-98a0-a0eeecea5c91",
+              "name": "List of foods that matched search terms",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "foods",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "query",
+                      "value": "cheddar cheese"
+                    },
+                    {
+                      "key": "dataType",
+                      "value": "Foundation,SR Legacy"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "25"
+                    },
+                    {
+                      "key": "pageNumber",
+                      "value": "2"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "dataType.keyword"
+                    },
+                    {
+                      "key": "sortOrder",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "brandOwner",
+                      "value": "Kar Nut Products Company"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"foodSearchCriteria\": {\n    \"query\": \"Cheddar cheese\",\n    \"dataType\": [\n      \"Foundation\",\n      \"SR Legacy\"\n    ],\n    \"pageSize\": 25,\n    \"pageNumber\": 2,\n    \"sortBy\": \"publishedDate\",\n    \"sortOrder\": \"desc\",\n    \"brandOwner\": \"Kar Nut Products Company\",\n    \"tradeChannel\": [\n      \"FOOD_SERVICE\"\n    ],\n    \"startDate\": \"2021-01-01\",\n    \"endDate\": \"2021-12-30\"\n  },\n  \"totalHits\": 1034,\n  \"currentPage\": 845,\n  \"totalPages\": 4875,\n  \"foods\": [\n    {\n      \"fdcId\": 45001529,\n      \"description\": \"BROCCOLI\",\n      \"dataType\": \"Branded\",\n      \"foodCode\": \"string\",\n      \"foodNutrients\": [\n        {\n          \"number\": 303,\n          \"name\": \"Iron, Fe\",\n          \"amount\": 0.53,\n          \"unitName\": \"mg\",\n          \"derivationCode\": \"LCCD\",\n          \"derivationDescription\": \"Calculated from a daily value percentage per serving size measure\"\n        },\n        {\n          \"number\": 303,\n          \"name\": \"Iron, Fe\",\n          \"amount\": 0.53,\n          \"unitName\": \"mg\",\n          \"derivationCode\": \"LCCD\",\n          \"derivationDescription\": \"Calculated from a daily value percentage per serving size measure\"\n        }\n      ],\n      \"publicationDate\": \"4/1/2019\",\n      \"scientificName\": \"string\",\n      \"brandOwner\": \"Supervalu, Inc.\",\n      \"gtinUpc\": \"string\",\n      \"ingredients\": \"string\",\n      \"ndbNumber\": 1356,\n      \"additionalDescriptions\": \"Coon; sharp cheese; Tillamook; Hoop; Pioneer; New York; Wisconsin; Longhorn\",\n      \"allHighlightFields\": \"string\",\n      \"score\": 7996.11191390436\n    },\n    {\n      \"fdcId\": 45001529,\n      \"description\": \"BROCCOLI\",\n      \"dataType\": \"Branded\",\n      \"foodCode\": \"string\",\n      \"foodNutrients\": [\n        {\n          \"number\": 303,\n          \"name\": \"Iron, Fe\",\n          \"amount\": 0.53,\n          \"unitName\": \"mg\",\n          \"derivationCode\": \"LCCD\",\n          \"derivationDescription\": \"Calculated from a daily value percentage per serving size measure\"\n        },\n        {\n          \"number\": 303,\n          \"name\": \"Iron, Fe\",\n          \"amount\": 0.53,\n          \"unitName\": \"mg\",\n          \"derivationCode\": \"LCCD\",\n          \"derivationDescription\": \"Calculated from a daily value percentage per serving size measure\"\n        }\n      ],\n      \"publicationDate\": \"4/1/2019\",\n      \"scientificName\": \"string\",\n      \"brandOwner\": \"Supervalu, Inc.\",\n      \"gtinUpc\": \"string\",\n      \"ingredients\": \"string\",\n      \"ndbNumber\": 6541,\n      \"additionalDescriptions\": \"Coon; sharp cheese; Tillamook; Hoop; Pioneer; New York; Wisconsin; Longhorn\",\n      \"allHighlightFields\": \"string\",\n      \"score\": 657.4222387126349\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f785b213-166b-45bc-89d5-c86737cb24b4",
+              "name": "bad input parameter",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "foods",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "query",
+                      "value": "cheddar cheese"
+                    },
+                    {
+                      "key": "dataType",
+                      "value": "Foundation,SR Legacy"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "25"
+                    },
+                    {
+                      "key": "pageNumber",
+                      "value": "2"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "dataType.keyword"
+                    },
+                    {
+                      "key": "sortOrder",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "brandOwner",
+                      "value": "Kar Nut Products Company"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e52431e7-27a3-4924-acf0-02d917c317c7",
+          "name": "Returns a list of foods that matched search (query) keywords",
+          "request": {
+            "name": "Returns a list of foods that matched search (query) keywords",
+            "description": {
+              "content": "Search for foods using keywords. Results can be filtered by dataType and there are options for result page sizes or sorting.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "foods",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"<string>\",\n  \"dataType\": [\n    \"<string>\"\n  ],\n  \"pageSize\": \"<integer>\",\n  \"pageNumber\": \"<integer>\",\n  \"sortBy\": \"<string>\",\n  \"sortOrder\": \"<string>\",\n  \"brandOwner\": \"<string>\",\n  \"tradeChannel\": [\n    \"<string>\"\n  ],\n  \"startDate\": \"<string>\",\n  \"endDate\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e5f5305d-4ae9-4c23-9b7b-1f407ae47c38",
+              "name": "List of foods that matched search terms",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "foods",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": \"Cheddar cheese\",\n  \"dataType\": [\n    \"Foundation\",\n    \"SR Legacy\"\n  ],\n  \"pageSize\": 25,\n  \"pageNumber\": 2,\n  \"sortBy\": \"<string>\",\n  \"sortOrder\": \"<string>\",\n  \"brandOwner\": \"Kar Nut Products Company\",\n  \"tradeChannel\": [\n    \"<string>\"\n  ],\n  \"startDate\": \"2021-01-01\",\n  \"endDate\": \"2021-12-30\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"foodSearchCriteria\": {\n    \"query\": \"Cheddar cheese\",\n    \"dataType\": [\n      \"Foundation\",\n      \"SR Legacy\"\n    ],\n    \"pageSize\": 25,\n    \"pageNumber\": 2,\n    \"sortBy\": \"<string>\",\n    \"sortOrder\": \"<string>\",\n    \"brandOwner\": \"Kar Nut Products Company\",\n    \"tradeChannel\": [\n      \"<string>\"\n    ],\n    \"startDate\": \"2021-01-01\",\n    \"endDate\": \"2021-12-30\"\n  },\n  \"totalHits\": 1034,\n  \"currentPage\": 4514,\n  \"totalPages\": 5822,\n  \"foods\": [\n    {\n      \"fdcId\": 45001529,\n      \"description\": \"BROCCOLI\",\n      \"dataType\": \"Branded\",\n      \"foodCode\": \"string\",\n      \"foodNutrients\": [\n        {\n          \"number\": 303,\n          \"name\": \"Iron, Fe\",\n          \"amount\": 0.53,\n          \"unitName\": \"mg\",\n          \"derivationCode\": \"LCCD\",\n          \"derivationDescription\": \"Calculated from a daily value percentage per serving size measure\"\n        },\n        {\n          \"number\": 303,\n          \"name\": \"Iron, Fe\",\n          \"amount\": 0.53,\n          \"unitName\": \"mg\",\n          \"derivationCode\": \"LCCD\",\n          \"derivationDescription\": \"Calculated from a daily value percentage per serving size measure\"\n        }\n      ],\n      \"publicationDate\": \"4/1/2019\",\n      \"scientificName\": \"string\",\n      \"brandOwner\": \"Supervalu, Inc.\",\n      \"gtinUpc\": \"string\",\n      \"ingredients\": \"string\",\n      \"ndbNumber\": 2060,\n      \"additionalDescriptions\": \"Coon; sharp cheese; Tillamook; Hoop; Pioneer; New York; Wisconsin; Longhorn\",\n      \"allHighlightFields\": \"string\",\n      \"score\": 5136.508706304747\n    },\n    {\n      \"fdcId\": 45001529,\n      \"description\": \"BROCCOLI\",\n      \"dataType\": \"Branded\",\n      \"foodCode\": \"string\",\n      \"foodNutrients\": [\n        {\n          \"number\": 303,\n          \"name\": \"Iron, Fe\",\n          \"amount\": 0.53,\n          \"unitName\": \"mg\",\n          \"derivationCode\": \"LCCD\",\n          \"derivationDescription\": \"Calculated from a daily value percentage per serving size measure\"\n        },\n        {\n          \"number\": 303,\n          \"name\": \"Iron, Fe\",\n          \"amount\": 0.53,\n          \"unitName\": \"mg\",\n          \"derivationCode\": \"LCCD\",\n          \"derivationDescription\": \"Calculated from a daily value percentage per serving size measure\"\n        }\n      ],\n      \"publicationDate\": \"4/1/2019\",\n      \"scientificName\": \"string\",\n      \"brandOwner\": \"Supervalu, Inc.\",\n      \"gtinUpc\": \"string\",\n      \"ingredients\": \"string\",\n      \"ndbNumber\": 3240,\n      \"additionalDescriptions\": \"Coon; sharp cheese; Tillamook; Hoop; Pioneer; New York; Wisconsin; Longhorn\",\n      \"allHighlightFields\": \"string\",\n      \"score\": 8350.682550402042\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ca3079ef-8af9-4d57-8137-8d50e79dcb78",
+              "name": "bad input parameter",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "foods",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": \"Cheddar cheese\",\n  \"dataType\": [\n    \"Foundation\",\n    \"SR Legacy\"\n  ],\n  \"pageSize\": 25,\n  \"pageNumber\": 2,\n  \"sortBy\": \"<string>\",\n  \"sortOrder\": \"<string>\",\n  \"brandOwner\": \"Kar Nut Products Company\",\n  \"tradeChannel\": [\n    \"<string>\"\n  ],\n  \"startDate\": \"2021-01-01\",\n  \"endDate\": \"2021-12-30\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "92ff09ba-016a-45ed-a35a-676038c5e275",
+          "name": "Returns this documentation in JSON format",
+          "request": {
+            "name": "Returns this documentation in JSON format",
+            "description": {
+              "content": "The OpenAPI 3.0 specification for the FDC API rendered as JSON (JavaScript Object Notation)",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "json-spec"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7311b59b-7cfe-4c60-9671-2da9e8cb2097",
+              "name": "JSON rendering of OpenAPI 3.0 specification",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "json-spec"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7483b8b7-26f0-4410-aef4-0b9f6f7c2168",
+          "name": "Returns this documentation in JSON format",
+          "request": {
+            "name": "Returns this documentation in JSON format",
+            "description": {
+              "content": "The OpenAPI 3.0 specification for the FDC API rendered as YAML (YAML Ain't Markup Language)",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "yaml-spec"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "556d10e7-1a62-4a09-9088-20d0db37b96a",
+              "name": "YAML rendering of OpenAPI 3.0 specification",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "yaml-spec"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.nal.usda.gov/fdc",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "4d76ac60-af44-4c7d-b74c-41fa9f8ba632",
+    "name": "Food Data Central FDC API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The FoodData Central API provides REST access to FoodData Central (FDC). It is intended primarily to assist application developers wishing to incorporate nutrient data into their applications or websites.\n  To take full advantage of the API, developers should familiarize themselves with the database by reading the database documentation available via links on [Data Type Documentation](https://fdc.nal.usda.gov/data-documentation.html). This documentation provides the detailed definitions and descriptions needed to understand the data elements referenced in the API documentation.\n  \n  Additional details about the API including rate limits, access, and licensing are available on the [FDC website](https://fdc.nal.usda.gov/api-guide.html)\n\nContact Support:\n Name: Food Data Central Contact Form",
+      "type": "text/plain"
+    }
+  }
+}
