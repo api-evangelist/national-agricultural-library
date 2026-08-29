@@ -4,6 +4,18 @@ description: >-
   The USDA National Agricultural Library houses one of the world's largest collections devoted to agriculture and its
   related sciences, and operates FoodData Central, an integrated data system providing nutrient profiles for foods.
 type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
