@@ -37,7 +37,7 @@ modified: '2026-05-19'
 specificationVersion: '0.23'
 tags:
   - Agriculture
-  - Federal-Government
+  - Federal Government
   - Library
   - Food
   - Nutrition
@@ -47,6 +47,7 @@ tags_raw:
   - Library
   - Food
   - Nutrition
+  - Federal-Government
 apis:
 - aid: national-agricultural-library:national-agricultural-library-fdc-api
   name: National Agricultural Library FDC API
