@@ -1,4 +1,4 @@
-# National Agricultural Library (national-agricultural-library)
+# National Agricultural Library
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,56 +66,113 @@
 
 The USDA National Agricultural Library houses one of the world's largest collections devoted to agriculture and its related sciences, and operates FoodData Central, an integrated data system providing nutrient profiles for foods.
 
-**APIs.json:** [https://www.nal.usda.gov/](https://www.nal.usda.gov/)
+**Areas:** Agriculture · Federal Government · Library · Food · Nutrition
 
-## Scope
+## National Agricultural Library on APIs.io
 
-- **Type:** Index
+Everything profiled for National Agricultural Library is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/national-agricultural-library/](https://apis.io/providers/national-agricultural-library/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (1)
 
-- Agriculture
-- Federal Government
-- Library
-- Food
-- Nutrition
+- [National Agricultural Library FDC API](https://apis.io/apis/national-agricultural-library/national-agricultural-library-fdc-api/) — endpoints to retrieve nutrient data
 
-## Timestamps
+### Published properties
 
-- **Created:** 2024-11-21
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### USDA FoodData Central API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The FoodData Central API provides REST access to FoodData Central (FDC). It is intended primarily to assist application developers wishing to incorporate nutrient data into their applications or websites.
+- [National Agricultural Library Agentic Access](https://apis.io/agentic-access/national-agricultural-library/national-agricultural-library-agentic-access/)
 
-- **Human URL:** [https://fdc.nal.usda.gov/api-guide](https://fdc.nal.usda.gov/api-guide)
-- **Base URL:** `https://api.nal.usda.gov/fdc/v1`
+#### Collections (2)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Food
-- Nutrition
-- Agriculture
-- Open Data
+- [Food Data Central API](https://apis.io/collections/national-agricultural-library/open-national-agricultural-library/)
+- [Food Data Central FDC API](https://apis.io/collections/national-agricultural-library/open-national-agricultural-library-fdc-api/)
 
-#### Properties
+#### Security (2)
 
-- [Documentation](https://fdc.nal.usda.gov/api-guide)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/national-agricultural-library/main/openapi/national-agricultural-library-openapi.json) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Sign Up](https://fdc.nal.usda.gov/api-key-signup)
-- [Postman Collection](collections/national-agricultural-library.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/national-agricultural-library.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-## Common Properties
+- [National Agricultural Library Authentication](https://apis.io/security/national-agricultural-library/national-agricultural-library-authentication/)
+- [National Agricultural Library Domain Security](https://apis.io/security/national-agricultural-library/national-agricultural-library-domain-security/)
 
-- [LinkedIn](https://www.linkedin.com/company/national-agricultural-library)
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [National Agricultural Library Plans Pricing](https://apis.io/plans/national-agricultural-library/national-agricultural-library-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [National Agricultural Library Rate Limits](https://apis.io/rate-limits/national-agricultural-library/national-agricultural-library-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [National Agricultural Library Finops](https://apis.io/finops/national-agricultural-library/national-agricultural-library-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.nal.usda.gov/)
-- [Portal](https://fdc.nal.usda.gov/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 29.0** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 47.7 |
+| Contract governance | 0.0 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 31.0 |
+| Access clarity | 21.1 |
+
+**Agent readiness 20.4** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 11.8** — Education & Research
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/national-agricultural-library/](https://apis.io/providers/national-agricultural-library/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for National Agricultural Library: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/national-agricultural-library/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
